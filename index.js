@@ -28,9 +28,9 @@ function readLine(k){
             arr.push(line);
             
         });
+        //监听读取完文件
         objReadline.on('close', ()=>{ 
             hanlderJson(dirName,arr)
-            console.log('readline close...'); 
         });
        
     }
@@ -68,7 +68,6 @@ function hanlderJson(path,list){
     let content = JSON.stringify(obj)
     let len = arr1.length-1
     if(obj.AccX.length != len&&obj.AccY.length != len&&obj.AccZ.length != len&&obj.GyroX.length != len&&obj.GyroY.length != len&&obj.GyroZ.length != len){
-        alert(123)
         new Error('出错了!数据不对')
     }
     var file = path1.join(__dirname, `json/${path}.json`); 
@@ -80,6 +79,6 @@ function hanlderJson(path,list){
         obj = {}
         index_={}
         content=''
-        // console.log('文件创建成功，地址：' + file);
+        console.log('文件创建成功，地址：' + file);
     });
 }
