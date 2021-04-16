@@ -2,7 +2,7 @@ var fs = require('fs');
 var path1 = require('path');
 var readline = require('readline');
 // 配置文件顺序
-const config = ['AccY','AccZ','AccX','GyroX','GyroY','GyroZ']
+const config = ['AccX','AccY','AccZ','GyroX','GyroY','GyroZ']
 //读取文件
 var readDirList = fs.readdirSync("./model");
 for(let i = 0;i<readDirList.length;i++){
@@ -74,6 +74,7 @@ function hanlderJson(path,list){
         }
         arr1 = [];
         obj = {}
+        index_={}
         // console.log('文件创建成功，地址：' + file);
     });
 }
